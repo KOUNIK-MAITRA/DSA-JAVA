@@ -4,8 +4,8 @@ class FrogJump_Recursion
 {
     public static void main(String args[])
     {
-        int n=8;
-        int []heights={7, 4, 4, 2, 6, 6, 3, 4 };
+        int n=5;
+        int []heights={10, 30, 40, 50, 20 };
         System.out.println(minimumEnergy(n-1,heights));
     }
     public static int minimumEnergy(int n,int heights[])

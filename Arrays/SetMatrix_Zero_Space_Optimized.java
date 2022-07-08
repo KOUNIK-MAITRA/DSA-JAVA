@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class SetMatrix_Zero
+public class SetMatrix_Zero_Space_Optimized
 {
     public static void main(String args[])
     {

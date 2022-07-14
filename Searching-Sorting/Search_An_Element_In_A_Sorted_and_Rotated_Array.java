@@ -22,7 +22,7 @@ class Search_An_Element_In_A_Sorted_and_Rotated_Array
           //left half is sorted
           if(nums[low]<nums[mid])
          { 
-          if(key>=nums[low] && key<nums[mid])
+           if(key>=nums[low] && key<nums[mid])
               high=mid-1; 
              else
               low=mid+1; 

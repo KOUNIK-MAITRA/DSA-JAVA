@@ -2,4 +2,6 @@
 *.ctxt
 *.TXT
 *.bluej
-doc
+*.html
+*.css
+*.js

@@ -51,7 +51,7 @@ class Game_of_Life
           }
           
           }
-      }
+       }
         
         fixboard(board,n,m);
         
@@ -62,7 +62,7 @@ class Game_of_Life
          int countOne = 0;
         
         //topleft
-        if(row > 0 && col > 0){
+         if(row > 0 && col > 0){
             if(board[row-1][col-1] == 1 || board[row-1][col-1] == 3) countOne++;
         } 
         

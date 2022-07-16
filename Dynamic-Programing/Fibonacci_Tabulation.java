@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-class Fibonacci_BottomUp
+class Fibonacci_Tabulation
 {
     public static void main(String args[])
     {

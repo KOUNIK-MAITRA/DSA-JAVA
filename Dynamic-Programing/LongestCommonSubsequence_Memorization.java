@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
- class LongestCommonSubsequence_BottomUp
+ class LongestCommonSubsequence_Memorization
 {
    public static void main (String args[])
     {

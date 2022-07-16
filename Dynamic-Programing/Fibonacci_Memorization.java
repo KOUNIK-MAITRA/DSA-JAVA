@@ -1,5 +1,5 @@
 import java.util.*;
- class Fibonacci_TopDown
+ class Fibonacci_Memorization
 {
     public static void main (String args[])
     {

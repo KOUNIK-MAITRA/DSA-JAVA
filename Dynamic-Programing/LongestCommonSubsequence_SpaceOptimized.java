@@ -10,7 +10,7 @@ import java.util.*;
       
       System.out.println("Length of Longest Common Subsequence is "+ LCS(m,n,a,b));
     }
-  public static void ArrayCopy(int[]a,int[]b)
+   static void ArrayCopy(int[]a,int[]b)
    { for(int i=0;i<a.length;i++)
        { a[i]=b[i];
         }

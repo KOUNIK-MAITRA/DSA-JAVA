@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-class LongestCommonSubsequence_TopDown
+class LongestCommonSubsequence_Tabulation
 {
     public static void main (String args[])
     {

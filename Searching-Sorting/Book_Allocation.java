@@ -4,32 +4,32 @@ import java.util.*;
 {
         //function to check if it is possible to allocate the books such that the 
 	//maximum number of pages assigned to any student is numPages
-	static boolean isPossible(int arr[], int n, int m, int curr_min)
+	static boolean isPossible(int arr[], int n, int students, int curr_min_pages)
 	{
 		int cntStudents = 1;
-		int curSum = 0;
+		int currPages= 0;
 	
 		// iterate over all the books
 		for (int i = 0; i < n; i++)
 		{
 		
-		       if (arr[i] > curr_min)
+		       if (arr[i] > curr_min_pages) // if book has more pages than curr_min_pages
 			 return false;
 	
-			if (curSum + arr[i] > curr_min)
+		      if (currPages + arr[i] > curr_min_pages) // if u cannot allot nay more books to curr student
 		       {		
 		        //Increment student count by '1'
 			cntStudents++;	
-			/* assign current book to next student and update curSum */
-			curSum = arr[i];	
+			/* assign current book to next student and update currPages */
+			currPages = arr[i];	
 			/* If count of students becomes greater than given no. of students, return False*/
-			if (cntStudents > m)
+			if (cntStudents > students)
 			 return false;
 			 
 			}
 			/* Else assign this book to current student and update curSum */
 			else
-			 curSum += arr[i];
+			 currPages += arr[i];
 		}
 		return true;
 	}
@@ -38,17 +38,19 @@ import java.util.*;
 	static int findPages(int arr[], int n, int m)
 	{
 	   long sum = 0;
-	
-	   /* If number student is more than number of books */
-	  if (n < m)
+	   int min=Integer.MAX_VALUE;
+	    /* If number student is more than number of books */
+	   if (n < m)
 	    return -1;
 	
-	    /* Count total number of pages */
+	   /* Count total number of pages */
 	  for (int i = 0; i < n; i++)
-	    sum += arr[i];
+	   {   min=Math.min(min,arr[i]);
+	       sum += arr[i];
+	   }
 	
-	    /* Initialize start with 0 and end with sum */
-	  int start = 0, end = (int) sum;
+	   /* Initialize start with min pages and end with sum */
+	  int start = min, end = (int) sum;
 	  int result = Integer.MAX_VALUE;
 	
 	    /* Traverse until start <= end , binary search */

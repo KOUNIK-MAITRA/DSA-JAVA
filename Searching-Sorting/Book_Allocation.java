@@ -54,7 +54,7 @@ import java.util.*;
 	  int result = Integer.MAX_VALUE;
 	
 	    /* Traverse until start <= end , binary search */
-          while (start <= end)
+           while (start <= end)
           {
 		/* Check if it is possible to distribute books by using mid as current maximum */
 		int mid = (start + end) / 2;

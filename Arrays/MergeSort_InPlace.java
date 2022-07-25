@@ -37,10 +37,10 @@ import java.util.*;
             }
      } 
      
-     while(i<mid){
+      while(i<mid){
          mergedArray[k++]=nums[i++];
         }
-     while( j<end){
+      while( j<end){
          mergedArray[k++]=nums[j++];
         } 
     

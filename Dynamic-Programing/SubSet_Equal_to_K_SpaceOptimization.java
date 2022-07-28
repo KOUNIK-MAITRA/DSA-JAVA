@@ -14,7 +14,8 @@ import java.util.*;
      
        prev[0]=true;
       
-       prev[arr[0]]=true; // if the target is equal to the value at arr[0]
+       if(arr[0]<=k)
+         prev[arr[0]]=true; // if the target is equal to the value at arr[0]
         
        for(int ind=1;ind<n;ind++)
        {   boolean curr[]=new boolean[k+1]; 

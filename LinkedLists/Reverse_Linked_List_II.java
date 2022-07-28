@@ -10,6 +10,14 @@ import java.util.*;
       this.next=null;
      }
     }
+     static void display(Node head){
+     while(head!=null)
+     { System.out.print(head.data+" --> ");
+         head=head.next;
+        }
+        System.out.print("null");
+        System.out.println();
+    }
       static Node reverseBetween(Node head, int left, int right) {
         
         Node dummy=new Node(0);
@@ -36,14 +44,7 @@ import java.util.*;
         
         return dummy.next;
     }
-    static void display(Node head){
-     while(head!=null)
-     { System.out.print(head.data+" --> ");
-         head=head.next;
-        }
-        System.out.print("null");
-        System.out.println();
-    }
+
     public static void main(String args[]){
      Node head=new Node(1);
      head.next=new Node(2);

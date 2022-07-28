@@ -1,13 +1,27 @@
 import java.io.*;
 import java.util.*;
- class SubSet_Equal_to_K_Tabulation_
-{
-  public static void main(String args[])
-   { int arr[]={1,2,3,6};
+class Partition_Equal_Subset_Sum_Tabulation
+ {
+   public static void main(String args[]){
+     int arr[] = {3,3,3,4,5};
      int n=arr.length;
-     int k=5;
-     System.out.println(subsetSumToK(n,arr,k));
+     
+     System.out.println(canPartition(arr));
+   }
+    static boolean canPartition(int[] arr) {
+    int sum=0;
+    int n=arr.length;
+    for(int i=0; i<n;i++){
+        sum+= arr[i];
     }
+    if(sum%2==1)
+     return false;
+    
+    int target=sum/2;
+   
+   
+    return subsetSumToK(n-1,arr,target);
+  } 
    static boolean subsetSumToK(int n, int arr[], int k){ 
     
        boolean dp[][]=new boolean[n][k+1]; 

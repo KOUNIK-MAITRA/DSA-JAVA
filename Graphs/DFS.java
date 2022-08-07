@@ -4,28 +4,28 @@ class DFS
 {
         static void dfs (int node,boolean[] visited,ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> ans)
         {
-            ans.add(node);
-            visited[node]=true;
+            ans.add(node); // add the node that called for dfs
+            visited[node]=true;// mark the node as viisted
             
-            for(int ele : adj.get(node))
+            for(int ele : adj.get(node)) //for every element in the adjaceny list
             {
-                if(visited[node]==false)
+                if(visited[node]==false)// if the node is not viisted
                 {
-                    dfs(node,visited,adj,ans);
+                    dfs(node,visited,adj,ans);// call for dfs
                 }
             }
         }
         static ArrayList<Integer> dfsTraversal(int V, ArrayList<ArrayList<Integer>> adj)
         {
-           ArrayList<Integer> ans =new ArrayList<>();
-           boolean visited[]=new boolean[V];
+           ArrayList<Integer> dfs =new ArrayList<>(); // ds to store the dfs traversal
+           boolean visited[]=new boolean[V]; // a boolean visisted array to mark the nodes that are already visisted
            
-           for(int i=0;i<V;i++)
-           { if(visited[i]==false)
-               dfs(i,visited,adj,ans);
+           for(int i=0;i<V;i++)// check for every node in the graph
+           { if(visited[i]==false) // if the node is not viisted
+               dfs(i,visited,adj,dfs);// call for its dfs
             }
            
-           return ans;
+           return dfs;
         }
         
 	static void addEdge(ArrayList<ArrayList<Integer> > adj,int u, int v)

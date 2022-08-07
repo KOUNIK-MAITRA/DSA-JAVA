@@ -2,16 +2,17 @@ import java.io.*;
 import java.util.*;
 class CycleDetection_DFS
 {   
-    static boolean checkCycle(int node, int prev,boolean visited[],ArrayList<ArrayList<Integer>> adj)
+    static boolean checkCycle(int currNode, int prev,boolean visited[],ArrayList<ArrayList<Integer>> adj)
     {
-        visited[node]=true;
-        for(int ele : adj.get(node))
+        visited[currNode]=true;// mark the curr node as visited
+        for(int node : adj.get(currNode)) // check for all nodes in the adjacency list
         {
-           if(visited[ele]==false)
-           { if(checkCycle(ele,node,visited,adj))
+           if(visited[node]==false) // if the node is not visited
+           { if(checkCycle(node,currNode,visited,adj)) // check for cycle using dfs
                return true;
             }
-            else if(ele!=prev)
+            // if the nod is already visisted just check if its not the parent/prev node
+            else if(node!=prev) // if node is not the prev node of currNode-cycle present
             return true;
         }
         return false;
@@ -23,9 +24,9 @@ class CycleDetection_DFS
         
         for(int i=1;i<=V;i++)
         {
-            if(visited[i]==false)
-            {
-                if(checkCycle(i,-1,visited,adj))
+            if(visited[i]==false)// if the node is not visisted
+            {   int currNode=i;
+                if(checkCycle(currNode,-1,visited,adj)) // check for cycle using dfs
                  return true;
             }
         }

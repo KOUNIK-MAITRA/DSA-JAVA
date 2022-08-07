@@ -1,32 +1,30 @@
 import java.io.*;
 import java.util.*;
  class LongestCommonSubsequence_Memorization
-{
-   public static void main (String args[])
-    {
-        String a="ABCAB"; 
-        String b="AECB";
-        int m=a.length();
-        int n=b.length();
-        System.out.println("length of the longest subsequence is "+LCS(m,n,a,b));
-    }
-   public static int LCS(int m,int n,String a, String b)
-    {
-         int[][] dp=new int[m+1][n+1];
-            int ans =LCSutil(m,n,a,b,dp);
-            return ans;
-    }
-   public static int LCSutil(int m, int n, String a, String b,int dp[][])
-    {
-       for(int i=1;i<=m;i++)
-       {for(int j=1;j<=n;j++)
-           { if(a.charAt(i-1)==b.charAt(j-1))
-               dp[i][j]=1+dp[i-1][j-1];
-               else
-               dp[i][j]=Math.max(dp[i-1][j],dp[i][j-1]);
-            }
-        }
-        
-        return dp[m][n];
-    }
+ {
+  public static void main(String args[]){
+      String text1="abcde";
+      String text2="ace";     
+      System.out.println(longestCommonSubsequence(text1,text2));
+ }
+ static int longestCommonSubsequence(String text1, String text2) {
+        int n=text1.length();
+        int m=text2.length();
+        int dp[][]=new int [n][m];
+        for(int [] arr:dp)
+          Arrays.fill(arr,-1);
+        return lengthOfLCS(n-1,m-1,text1,text2,dp);
+    } 
+ static int lengthOfLCS(int i, int j, String text1,String text2,int[][]dp){
+     if(i<0 || j<0)
+      return 0;
+     
+      if(dp[i][j]!=-1)
+       return dp[i][j];
+      
+     if(text1.charAt(i)==text2.charAt(j))
+      return dp[i][j]=1+lengthOfLCS(i-1,j-1,text1,text2,dp);
+     else
+      return dp[i][j]=0+Math.max(lengthOfLCS(i-1,j,text1,text2,dp),lengthOfLCS(i,j-1,text1,text2,dp));
+    }   
 }

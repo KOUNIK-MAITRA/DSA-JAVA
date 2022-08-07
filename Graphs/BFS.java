@@ -5,28 +5,28 @@ class BFS
 
         static ArrayList<Integer> bfsTraversal(int V, ArrayList<ArrayList<Integer>> adj)
         {
-            ArrayList<Integer> bfs = new ArrayList<>();
-            boolean visited[]=new boolean[V];
+            ArrayList<Integer> bfs = new ArrayList<>();// ds to store the bfs traversal
+            boolean visited[]=new boolean[V]; // to mar the nodes that have been already visited
             
-            for(int i=0;i<V;i++)
+            for(int i=0;i<V;i++) // check for every node
             {
-                if(visited[i]==false)
+                if(visited[i]==false) // if the node is not visited
                 {
-                    Queue<Integer> q = new LinkedList<>();
-                    q.add(i);
-                    visited[i]=true;
+                    Queue<Integer> q = new LinkedList<>(); // create a queue
+                    q.add(i);// add the node
+                    visited[i]=true;//mark the node visited
                     
-                    while(!q.isEmpty())
+                    while(!q.isEmpty()) // while the queue is not empty
                     {
-                        int node=q.poll();
-                        bfs.add(node);
+                        int node=q.poll(); //remove the node from the queue
+                        bfs.add(node); // add it to the ans ds
                         
-                        for( int ele : adj.get(i))
+                        for( int ele : adj.get(i)) // check for every adjacent node
                         {
-                            if(visited[ele]==false)
+                            if(visited[ele]==false) // if the node is not visited
                             {
-                                visited[ele]=true;
-                                q.add(ele);
+                                visited[ele]=true; // mark it as visited
+                                q.add(ele);// and add it to the queue
                             }
                         }
                     }

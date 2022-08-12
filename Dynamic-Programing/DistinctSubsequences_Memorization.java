@@ -2,12 +2,12 @@ import java.io.*;
 import java.util.*;
 class DistinctSubsequences_Memorization
  {
-  public static void main(String args[]){
+ public static void main(String args[]){
       String s="babgbag";
       String t="bag";
       System.out.println(numDistinct(s,t));
    } 
-   static int numDistinct(String s, String t) {
+ static int numDistinct(String s, String t) {
       int n=s.length();
         int m=t.length();
         int dp[][]=new int [n][m];

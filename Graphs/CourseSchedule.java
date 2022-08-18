@@ -7,8 +7,9 @@ import java.util.*;
       int[][]prerequisites={{0,2},{0,1},{1,3},{1,4},{3,4}};
       System.out.println(canFinish(numCourses,prerequisites));
   }
-   static boolean canFinish(int numCourses, int[][] prerequisites) { 
-        if(numCourses == 0 || prerequisites == null || prerequisites.length == 0) return true; //??
+  static boolean canFinish(int numCourses, int[][] prerequisites) { 
+    if(numCourses == 0 || prerequisites == null || prerequisites.length == 0) 
+    return true; 
     
     // create the adj lists to represent the courses
     List<List<Integer>> adj = new ArrayList<List<Integer>>(numCourses);
@@ -25,7 +26,8 @@ import java.util.*;
     
     // dfs visit each course
     for(int i=0; i<numCourses; i++) {
-           if (!dfs(i,adj, visited)) return false; 
+           if (!dfs(i,adj, visited)) 
+            return false; 
     }
     
     return true;
@@ -40,11 +42,13 @@ import java.util.*;
     // dfs its children
     for(int preCourse :preCourses) {        
        
-        if(visited[preCourse] == 1) return false; // cycle present 
+        if(visited[preCourse] == 1)
+          return false; // cycle present 
        
         if(visited[preCourse]  == 0)
         { // not visited
-           if (!dfs(preCourse,adj, visited)) return false; 
+           if (!dfs(preCourse,adj, visited)) 
+             return false; 
         }
 
     }

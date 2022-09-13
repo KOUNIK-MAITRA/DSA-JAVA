@@ -26,7 +26,7 @@ import java.util.*;
      q.add(null); // add a null to mark end of a level
      while(!q.isEmpty()) // traverse till no nodes are left in the queue
      { 
-          Node curr=q.peek();// store the curr element
+         Node curr=q.peek();// store the curr element
          q.remove();// remove the element from the queue
         
         if(curr!=null) //if  the curr is not null

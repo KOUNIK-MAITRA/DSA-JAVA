@@ -3,7 +3,7 @@ import java.util.*;
 public class CustomQueue
 {
    private static final int DEFAULT_SIZE=10;
-   private int[] data;
+   protected int[] data;
    int end=-1;
    
    public CustomQueue()

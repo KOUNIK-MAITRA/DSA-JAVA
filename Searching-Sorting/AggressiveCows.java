@@ -18,7 +18,7 @@ class AggressiveCows
         {
             if(stalls[i]-lastPlacedCow>=minDist) // if the cow can be placed
             { count_cows++;
-                lastPlacedCow=stalls[i];
+              lastPlacedCow=stalls[i];
             }
         }
         if(count_cows>=cows) // if the cows can be placed
